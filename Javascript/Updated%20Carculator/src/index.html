@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Updated Carculator</title>
+    <link rel="stylesheet" href="styles/index.css">
+
+    
+
+    
+
+
+</head>
+<body>
+
+
+
+
+
+
+    <div class="main">
+
+        <form name="form">
+            <!--Display-->
+            
+
+            <input class="display" name="textview" id="display">
+            
+            
+            
+        </form>
+                <!--M-line-Buttons-->
+                <button class="M-button"type="button" value="MC" id="MC">MC</button>
+                <button class="M-button"type="button" value="MR" id="MR">MR</button>
+                <button class="M-button"type="button" value="M+" id="M+">M+</button>
+                <button class="M-button"type="button" value="M-" id="M-">M-</button>
+                <button class="M-button"type="button" value="MS" id="MS">MS</button><br>
+        
+                <!--first-line-Inputs-->
+                <input class="button"type="button" value="%" onclick="procent()"> <!--useless now-->
+                <input class="button"type="button" value="C" onclick="clean()">
+                <input class="button"type="button" value="&lt;" onclick="back()">
+                <input class="button"type="button" value="/"onclick="insert('/')">
+                <input class="button"type="button" value="x" onclick="insert('*')"><br>
+                <!--second-line-Inputs-->
+                <input class="button"type="button" value="&radic;" onclick="radic()">
+                <input class="button"type="button" value="7" onclick="insert(7)">
+                <input class="button"type="button" value="8" onclick="insert(8)">
+                <input class="button"type="button" value="9" onclick="insert(9)">
+                <input class="button"type="button" value="-" onclick="insert('-')"><br>
+                <!--third-line-Inputs-->
+                <input class="button"type="button" value="x²" onclick="pow2()">
+                <input class="button"type="button" value="4" onclick="insert(4)">
+                <input class="button"type="button" value="5" onclick="insert(5)">
+                <input class="button"type="button" value="6" onclick="insert(6)">
+                <input class="button"type="button" value="+" onclick="insert('+')"><br>
+                <!--forth-line-Inputs-->
+                <input class="button"type="button" value="x³" onclick="pow3()">
+                <input class="button"type="button" value="1" onclick="insert(1)">
+                <input class="button"type="button" value="2" onclick="insert(2)">
+                <input class="button"type="button" value="3" onclick="insert(3)">
+                <input class="button"type="button" value="=" id="equal"><br>
+                <!--fifth-line-Inputs-->
+                <input class="button"type="button" value="0" onclick="insert(0)">
+                <input class="button"type="button" value="." onclick="insert('.')"><br>
+
+                <!--History-->
+                <div class="history"id="historyWindow">
+                        
+                            <!--<div class="history1"id="history1" ></div>
+                            <div class="history2"id="history2" ></div>
+                            <div class="history3"id="history3"></div>
+                            <div class="history4"id="history4"></div>
+                            <div class="history5"id="history5>"></div>-->
+                        
+                </div>
+                
+               
+    </div>
+
+    <div class="container">
+        <p>hello</p>
+
+    </div>
+
+    
+
+    
+    
+    <script src="css-element-queries/src/ResizeSensor.js"></script>
+    <script src="css-element-queries/src/ElementQueries.js"></script>
+</body>
+</html>

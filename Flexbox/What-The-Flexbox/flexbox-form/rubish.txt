@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="basic.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="container">
+            <label class="home"><i>*</i><div class="item5">Item1</div></label>
+            <label class="logout"><i>*</i><div class="item6">Item1</div></label>
+            <div class="half">
+                <label class="item1"><i>*</i><div >Item1</div></label>
+                <label class="item2"><i>*</i><div >Item2</div></label>
+            </div>
+
+            <div class="item3">Item3</div>
+            <div class="item4">Item4</div>
+        </div>
+    </body>
+</html>
+
+.container {
+  border: 5px solid #ffcc5c;
+  display: flex;
+  flex-direction: column;
+}
+
+.home {
+  /* flex: 1 1 ; */
+    background-color: blue;
+      display: flex;
+}
+
+.logout {
+  flex: 1 1 25%;
+    background-color: red;
+      display: flex;
+}
+
+.half {
+  display: flex;
+  /* align-items: baseline */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+}
+
+.item1 {
+  background-color: blueviolet;
+  flex: 1 1 25%;
+  display: flex;
+  
+  
+}
+
+.item2 {
+  background-color: gold;
+  flex: 1 1 25%;
+  display: flex;
+  
+  
+}
+
+.item3 {
+  flex: 1 1 ;
+  background-color: gold;
+  
+}
+
+.item4 {
+  flex: 1 1 ;
+  background-color: blueviolet;
+  
+}
+
+.item5 {
+  flex: 1 1 ;
+  background-color: brown;
+  
+}.item6 {
+  flex: 1 1 ;
+  background-color: blueviolet;
+  
+}

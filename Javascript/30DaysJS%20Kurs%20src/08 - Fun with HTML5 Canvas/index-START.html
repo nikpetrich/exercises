@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas</title>
+</head>
+<body>
+
+<canvas id="draw" width="800" height="800"></canvas>
+
+<script>
+
+  const canvas = document.querySelector("#draw");//1 grab the convas
+  const ctx = canvas.getContext("2d");//2 get the context of the canvas
+
+  canvas.width = window.innerWidth;//3 get the whole width
+  canvas.height = window.innerHeight;//4 get the whole height
+  ctx.strokeStyle = "#BADSS";//5 style
+  ctx.lineJoin = "round";//5 style
+  ctx.lineCap = "round";//5 style
+  ctx.lineWidth = 100;
+
+  let isDrawing = false;//6 setting a variable of false
+  let lastX = 0;
+  let lastY = 0;
+  let hue = 0;
+  let direction = true;
+
+  function draw(e) {//11 execute the drawing
+    if (!isDrawing) return;//12 stop the function from running
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;//17 changing color
+    
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);//13 start from
+    ctx.lineTo(e.offsetX, e.offsetY)//14 go to
+    ctx.stroke();//15 paint that
+    [lastX, lastY] = [e.offsetX, e.offsetY];//16 destucturing an array
+    hue++;//18 changing color
+    if(hue >= 360) {//19 reset the hue
+      hue = 0;
+    }
+    if (ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {//20 if flip direction at these size
+      direction = !direction;
+    }
+    if(direction) { //21 if its true increment the size  
+      ctx.lineWidth++;
+    } else {        //22 if not dicrement the size
+      ctx.lineWidth--;
+    }
+    
+    //lastX = e.offsetX;
+    //lastY = e.offset;
+
+    console.log(e);
+  }
+canvas.addEventListener("mousedown", (e) => {// 8 listen for mousedown and changing the value of isDrawing
+  isDrawing = true;
+  [lastX, lastY] = [e.offsetX, e.offsetY];//update the actual position 
+});
+
+canvas.addEventListener("mousemove", draw);//7 draw
+canvas.addEventListener("mouseup", () => isDrawing = false);// 9 listen for mouseup and changing isDrawing
+canvas.addEventListener("mouseout", () => isDrawing = false);//10 in case of leaving the screen change the variable
+
+</script>
+
+<style>
+  html, body {
+    margin: 0;
+  }
+</style>
+
+</body>
+</html>
